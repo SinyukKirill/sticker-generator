@@ -7,6 +7,7 @@ import com.kvsinyuk.stickergenerator.applicaiton.port.out.mongo.FindBotDataPort
 import com.kvsinyuk.stickergenerator.applicaiton.port.out.mongo.GetBotDataPort
 import com.kvsinyuk.stickergenerator.applicaiton.port.out.telegram.TelegramFilePort
 import com.kvsinyuk.stickergenerator.applicaiton.port.out.telegram.TelegramMessagePort
+import com.kvsinyuk.stickergenerator.applicaiton.utils.getBufferedImage
 import com.kvsinyuk.stickergenerator.domain.TelegramUpdateMessage
 import com.kvsinyuk.stickergenerator.domain.sticker.StickerStatus
 import org.springframework.stereotype.Component

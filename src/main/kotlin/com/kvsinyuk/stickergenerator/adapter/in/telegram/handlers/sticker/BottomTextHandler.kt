@@ -29,8 +29,8 @@ class BottomTextHandler(
             .let { createStickerUseCase.createSticker(it) }
             .mapToByteArray()
 
-        deleteBotDataPort.delete(update.chatId)
         telegramMessagePort.sendDocument(update.chatId, stickerFile, (stickerData.commandData as CreateStickerData).originalFilename)
+            .also { deleteBotDataPort.delete(update.chatId) }
     }
 
     override fun canApply(update: TelegramUpdateMessage): Boolean {

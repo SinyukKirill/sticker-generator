@@ -13,6 +13,8 @@ spring:
 http:
   bg-removal:
     base-url: ${BG_REMOVAL_BASE_URL}
+  face-swap:
+    base-url: ${FACE_SWAP_BASE_URL}
 
 bot:
   token: ${BOT_TOKEN}

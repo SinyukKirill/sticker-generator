@@ -5,12 +5,11 @@ import org.springframework.data.annotation.TypeAlias
 
 @TypeAlias("face_swap")
 data class FaceSwapData(
-    var status: FaceSwapStatus = FaceSwapStatus.INIT,
-    var originalFilename: String = "result.png"
+    var status: FaceSwapStatus = FaceSwapStatus.INIT
 ): CommandData() {
 
-    var sourceImage: ByteArray? = null
-    var targetImage: ByteArray? = null
+    lateinit var sourceImage: Image
+    lateinit var targetImage: Image
 
     override fun isFaceSwapData() = true
 }

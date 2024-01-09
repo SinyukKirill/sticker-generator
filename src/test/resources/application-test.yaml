@@ -6,6 +6,8 @@ spring:
 http:
   bg-removal:
     base-url: http://localhost:8090
+  face-swap:
+    base-url: http://localhost:8091
 
 bot:
   token: 123testToken

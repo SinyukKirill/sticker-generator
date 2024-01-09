@@ -9,6 +9,7 @@ import com.kvsinyuk.stickergenerator.applicaiton.port.out.telegram.TelegramFileP
 import com.kvsinyuk.stickergenerator.applicaiton.port.out.telegram.TelegramMessagePort
 import com.kvsinyuk.stickergenerator.domain.TelegramUpdateMessage
 import com.kvsinyuk.stickergenerator.domain.faceswap.FaceSwapStatus
+import com.kvsinyuk.stickergenerator.domain.faceswap.Image
 import org.springframework.stereotype.Component
 
 @Component
@@ -26,7 +27,7 @@ class SourceImageHandler(
         val file = telegramFilePort.getFileContent(update.document!!.fileId())
         botData.getAsFaceSwapData()
             .apply {
-                sourceImage = file
+                sourceImage = Image(file, update.document.fileName())
                 status = FaceSwapStatus.SOURCE_FILE_ADDED
             }
         saveStickerDataUseCase.save(botData)
